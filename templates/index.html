@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      padding:0;
+      margin:0;
+    }
+   .box{
+     width:250px;
+     height:350px;
+     background:#e2e2e2;
+     margin:0 auto;
+   }
+   .tit {
+     width:250px;
+     height:250px;
+   }
+    .tit ul li{
+      width:60px;
+      height:40px;
+      line-height:40px;
+      background:#393D49;
+      color:#fff;
+      font-size:14px;
+      text-align:center;
+      margin:11px;
+      float:left;
+      list-style:none;
+    }
+    .cont{
+      width:200px;
+      padding:10px;
+      height:60px;
+      margin:0 auto;
+      background:#f2f2f2;
+      font-size:14px;
+    }
+  </style>
+</head>
+<script>
+  window.onload=function(){
+    var arr=[
+      '一月份活动简介',
+      '二月份活动简介',
+      '三月份活动简介',
+      '四月份活动简介',
+      '五月份活动简介',
+      '六月份活动简介',
+      '七月份活动简介',
+      '八月份活动简介',
+      '九月份活动简介',
+      '十月份活动简介',
+      '十一月份活动简介',
+      '十二月份活动简介',
+    ];
+    var Tit=document.getElementById('title');
+    var oLi=Tit.getElementsByTagName('li');
+    var Cont=document.getElementById('cont');
+
+    for(var i=0;i<oLi.length;i++){
+      oLi[i].index=i;
+      oLi[i].onmouseover=function(){
+        for(var i=0;i<oLi.length;i++){
+          oLi[i].style.background='';
+        }
+        this.style.background='#666';
+        Cont.innerHTML='<h2>'+(this.index+1)+'月份活动</h2><p>'+arr[this.index]+'</p>'
+      }
+    }
+  }
+
+</script>
+<body>
+<div class="box">
+  <div class="tit" id="title">
+    <ul>
+      <li>1月份</li>
+      <li>2月份</li>
+      <li>3月份</li>
+      <li>4月份</li>
+      <li>5月份</li>
+      <li>6月份</li>
+      <li>7月份</li>
+      <li>8月份</li>
+      <li>9月份</li>
+      <li>10月份</li>
+      <li>11月份</li>
+      <li>12月份</li>
+    </ul>
+  </div>
+  <div class="cont" id="cont">
+    <h2>一月份活动</h2>
+    <p>一月份活动简介</p>
+  </div>
+</div>
+</body>
+</html>
